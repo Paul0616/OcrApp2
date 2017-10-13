@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivityForResult(takePictureIntent, PHOTO_REQUEST);
                         }
                     } else {
-                        Toast.makeText(getApplication(), "camera not supported", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(), "camera not supported ", Toast.LENGTH_LONG).show();
                     }
                 }
             }
