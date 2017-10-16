@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_WRITE_PERMISSION = 20;
     private static final int PHOTO_REQUEST = 10;
 
-    private static final String[] ORAS_CAUTAT = new String[]{"FOCSANI", "BUC.", "PREDEAL"};
+    private static final String[] ORAS_CAUTAT = new String[]{"FOCSANI", "BUCURESTI", "PREDEAL"};
     private Boolean[] oraseGasite = new Boolean[]{false,false,false};
     private String dataDetectata;
     private String oraDetectata;
@@ -227,9 +227,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
         if(floatList.size() > 0) {
-            float pretTotal = floatList.get(0);
+           // float pretTotal = floatList.get(0);
+            pt = Float.toString(floatList.get(0));
             for(Float fl: floatList){
-                if(fl > pretTotal) {
+                if(fl > Float.parseFloat(pt)) {
                     pt = Float.toString(fl);
                 }
             }
@@ -262,12 +263,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         for(int i = 0; i<myList.size();i++) {
-            if (myList.get(i).matches("(0[1-9]|1[0-9]|2[0-3])(:[0-5][0-9])")){
+            if (myList.get(i).matches("(0[1-9]|1[0-9]|2[0-3])([:,-][0-5][0-9])")){
                 oraDetectata = myList.get(i).toString();
             }
         }
         for(int i = 0; i<myList.size();i++) {
-            if (myList.get(i).matches("(0[0-9]|1[0-9]|2[0-3])(:[0-5][0-9]){2}")){
+            if (myList.get(i).matches("(0[0-9]|1[0-9]|2[0-3])([:,-][0-5][0-9]){2}")){
                 oraDetectata = myList.get(i).toString();
             }
         }
